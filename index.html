@@ -7,7 +7,7 @@
     <meta name="author" content="Shivashankar Desai">
     <title>Shivashankar Desai - Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     
     <style>
@@ -29,8 +29,6 @@
             --accent-pink: #ec4899;
             --accent-green: #10b981;
             --accent-orange: #f59e0b;
-            --accent-cyan: #06b6d4;
-            --accent-indigo: #6366f1;
             
             --border: rgba(59, 130, 246, 0.15);
             --border-hover: rgba(59, 130, 246, 0.3);
@@ -42,8 +40,6 @@
             --radius: 16px;
             --radius-lg: 24px;
             --spacing: clamp(1rem, 2.5vw, 2rem);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { 
@@ -63,9 +59,7 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             overflow-x: hidden;
-            font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body::before {
@@ -74,13 +68,11 @@
             inset: 0;
             background: 
                 radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
-                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08), transparent 60%),
-                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.05), transparent 50%);
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08), transparent 60%);
             pointer-events: none;
             z-index: -1;
         }
 
-        /* Enhanced Loading Screen */
         .loading {
             position: fixed;
             inset: 0;
@@ -110,7 +102,6 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-secondary);
-            text-align: center;
             opacity: 0.8;
         }
 
@@ -123,7 +114,6 @@
             pointer-events: none;
         }
 
-        /* Enhanced Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -131,23 +121,21 @@
             height: 3px;
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
             z-index: 1000;
-            transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: width 0.2s ease;
             width: 0%;
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
-        /* Enhanced Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: var(--bg-glass);
             backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--border);
             z-index: 999;
             padding: 0.75rem 0;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         nav.scrolled {
@@ -174,7 +162,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
-            transition: var(--transition);
+            transition: transform 0.3s ease;
             animation: gradient-shift 3s ease-in-out infinite;
         }
 
@@ -184,7 +172,7 @@
         }
 
         .logo:hover {
-            transform: scale(1.05) rotate(1deg);
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -201,7 +189,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
-            transition: var(--transition);
+            transition: color 0.3s ease;
             padding: 0.5rem 0;
         }
 
@@ -214,7 +202,7 @@
             height: 2px;
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
             transform: translateX(-50%);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover::before,
@@ -225,7 +213,6 @@
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--text-primary);
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
         }
 
         .mobile-toggle {
@@ -237,15 +224,13 @@
             cursor: pointer;
             padding: 0.5rem;
             border-radius: var(--radius);
-            transition: var(--transition-fast);
+            transition: all 0.2s ease;
         }
 
         .mobile-toggle:hover {
             background: var(--bg-hover);
-            transform: scale(1.1);
         }
 
-        /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -254,7 +239,6 @@
             text-align: center;
             padding: var(--spacing);
             position: relative;
-            overflow: hidden;
         }
 
         .hero::before {
@@ -292,7 +276,7 @@
             color: white;
             margin: 0 auto 2.5rem;
             position: relative;
-            transition: var(--transition);
+            transition: transform 0.3s ease;
             box-shadow: var(--shadow-xl);
         }
 
@@ -300,7 +284,7 @@
             content: '';
             position: absolute;
             inset: -6px;
-            background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple), var(--accent-pink), var(--accent-cyan));
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
             background-size: 400% 400%;
             border-radius: 50%;
             opacity: 0.7;
@@ -317,7 +301,6 @@
 
         .avatar:hover {
             transform: scale(1.08) rotate(5deg);
-            box-shadow: var(--shadow-xl), var(--glow);
         }
 
         .hero h1 {
@@ -339,7 +322,6 @@
             color: var(--text-secondary);
             margin-bottom: 2rem;
             font-weight: 600;
-            position: relative;
         }
 
         .typing-cursor {
@@ -364,7 +346,6 @@
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 400;
         }
 
         .cta-buttons {
@@ -383,7 +364,7 @@
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -431,7 +412,6 @@
             color: var(--accent-purple);
         }
 
-        /* Enhanced Sections */
         .section {
             padding: 6rem 0;
             position: relative;
@@ -474,17 +454,14 @@
             color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto;
-            font-weight: 500;
         }
 
-        /* Enhanced Cards */
         .card {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
             backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            transition: var(--transition);
+            transition: all 0.3s ease;
             overflow: hidden;
             position: relative;
         }
@@ -495,7 +472,7 @@
             inset: 0;
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), transparent, rgba(139, 92, 246, 0.05));
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.3s ease;
         }
 
         .card:hover::before {
@@ -503,7 +480,7 @@
         }
 
         .card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px);
             border-color: var(--border-hover);
             box-shadow: var(--shadow-xl), var(--glow);
         }
@@ -517,11 +494,9 @@
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
         .grid-4 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 
-        /* Enhanced Stats */
         .stats {
             padding: 2.5rem;
             text-align: center;
-            position: relative;
         }
 
         .stat-number {
@@ -533,7 +508,7 @@
             -webkit-text-fill-color: transparent;
             display: block;
             margin-bottom: 0.75rem;
-            transition: var(--transition);
+            transition: transform 0.3s ease;
         }
 
         .stats:hover .stat-number {
@@ -548,7 +523,6 @@
             font-size: 0.9rem;
         }
 
-        /* About Section */
         .about-text {
             font-size: 1.2rem;
             color: var(--text-secondary);
@@ -564,7 +538,6 @@
             margin-bottom: 0;
         }
 
-        /* Enhanced Skills */
         .skills-category {
             padding: 2.5rem;
         }
@@ -582,10 +555,6 @@
         .skills-category h3 i {
             color: var(--accent-purple);
             font-size: 1.6rem;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .skill {
@@ -607,7 +576,6 @@
             background: rgba(255, 255, 255, 0.08);
             border-radius: 50px;
             overflow: hidden;
-            position: relative;
         }
 
         .skill-fill {
@@ -634,10 +602,8 @@
             100% { left: 100%; }
         }
 
-        /* Projects Section */
         .project {
             overflow: hidden;
-            position: relative;
         }
 
         .project-image {
@@ -648,22 +614,7 @@
             justify-content: center;
             font-size: 3rem;
             color: white;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.8s ease;
-        }
-
-        .project:hover .project-image::before {
-            transform: translateX(100%);
+            transition: transform 0.3s ease;
         }
 
         .project:hover .project-image {
@@ -679,17 +630,12 @@
             font-weight: 800;
             margin-bottom: 1rem;
             color: var(--text-primary);
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .project p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.7;
-            font-size: 1rem;
         }
 
         .project-tags {
@@ -706,14 +652,13 @@
             border-radius: 25px;
             font-size: 0.85rem;
             font-weight: 600;
-            transition: var(--transition-fast);
+            transition: all 0.2s ease;
             border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .tag:hover {
             background: rgba(59, 130, 246, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
         }
 
         .project-links {
@@ -731,32 +676,16 @@
             padding: 0.75rem 1.5rem;
             border-radius: var(--radius);
             border: 1px solid rgba(59, 130, 246, 0.3);
-            font-size: 0.9rem;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-link::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-link:hover::before {
-            opacity: 0.1;
+            transition: all 0.3s ease;
         }
 
         .project-link:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow);
             border-color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
         }
 
-        /* Education Timeline */
         .timeline {
             position: relative;
             max-width: 900px;
@@ -793,7 +722,6 @@
 
         .timeline-content {
             padding: 2.5rem;
-            position: relative;
         }
 
         .timeline-item::before {
@@ -837,14 +765,12 @@
             color: var(--accent-purple);
             margin-bottom: 1.5rem;
             font-weight: 700;
-            font-size: 1rem;
         }
 
         .timeline-description {
             color: var(--text-secondary);
             line-height: 1.7;
             margin-bottom: 1.5rem;
-            font-size: 1rem;
         }
 
         .timeline-achievements {
@@ -858,7 +784,6 @@
             gap: 0.75rem;
             color: var(--text-muted);
             margin-bottom: 0.75rem;
-            font-size: 0.95rem;
         }
 
         .timeline-achievements li i {
@@ -867,14 +792,13 @@
             margin-top: 0.3rem;
         }
 
-        /* Enhanced Contact */
         .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: 1fr;
             gap: 3rem;
         }
 
-        .contact-info, .contact-form {
+        .contact-info {
             padding: 2.5rem;
         }
 
@@ -887,7 +811,7 @@
             background: rgba(255, 255, 255, 0.04);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: var(--transition-fast);
+            transition: all 0.2s ease;
         }
 
         .contact-item:hover {
@@ -914,56 +838,11 @@
             color: var(--text-primary);
             font-weight: 700;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
         }
 
         .contact-item p {
             color: var(--text-secondary);
-            font-size: 1rem;
             font-weight: 500;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--text-primary);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: var(--transition-fast);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-accent);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-group textarea {
-            height: 140px;
-            resize: vertical;
         }
 
         .social-links {
@@ -984,7 +863,7 @@
             justify-content: center;
             color: var(--text-secondary);
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             font-size: 1.2rem;
         }
 
@@ -995,7 +874,6 @@
             box-shadow: var(--shadow), 0 0 20px rgba(59, 130, 246, 0.3);
         }
 
-        /* Enhanced Footer */
         footer {
             background: linear-gradient(180deg, var(--bg-primary), #000000);
             padding: 3rem 0;
@@ -1005,20 +883,7 @@
 
         footer p {
             color: var(--text-muted);
-            margin: 0;
-            font-size: 1rem;
             font-weight: 500;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nav-links {
-                gap: 2rem;
-            }
-            
-            .nav-links a {
-                font-size: 0.9rem;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1030,7 +895,6 @@
                 right: 0;
                 background: var(--bg-glass);
                 backdrop-filter: blur(24px);
-                -webkit-backdrop-filter: blur(24px);
                 flex-direction: column;
                 padding: 2rem;
                 border-top: 1px solid var(--border);
@@ -1080,10 +944,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
             .section {
                 padding: 4rem 0;
             }
@@ -1112,21 +972,12 @@
             .timeline-item::before {
                 left: -28px !important;
             }
-
-            .contact-content {
-                gap: 2rem;
-            }
-
-            .contact-info, .contact-form {
-                padding: 2rem;
-            }
         }
 
-        /* Scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .fade-in.visible {
@@ -1134,7 +985,6 @@
             transform: translateY(0);
         }
 
-        /* Performance optimizations */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -1163,7 +1013,7 @@
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="mobile-toggle" id="mobile-toggle">
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -1215,18 +1065,17 @@
                     </div>
                 </div>
                 
-      <div class="card about-text fade-in" style="margin-top: 4rem;">
-    <p>
-        I'm a Computer Science student at Bagalkot University with a passion for building 
-        full-stack web applications and exploring cloud technologies. I turn ideas into 
-        user-friendly solutions through clean code and creative problem-solving.
-    </p>
-    <p>
-        I'm constantly expanding my skill set through hands-on projects and staying current 
-        with the latest tech trends. Currently seeking internship opportunities to bring 
-        fresh perspectives and drive real impact in the tech world.
-    </p>
-</div>
+                <div class="card about-text fade-in" style="margin-top: 4rem;">
+                    <p>
+                        I'm a Computer Science student at Bagalkot University with a passion for building 
+                        full-stack web applications and exploring cloud technologies. I turn ideas into 
+                        user-friendly solutions through clean code and creative problem-solving.
+                    </p>
+                    <p>
+                        I'm constantly expanding my skill set through hands-on projects and staying current 
+                        with the latest tech trends. Currently seeking internship opportunities to bring 
+                        fresh perspectives and drive real impact in the tech world.
+                    </p>
                 </div>
             </div>
         </section>
@@ -1348,11 +1197,11 @@
                                 <span class="tag">JWT Auth</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fas fa-external-link-alt"></i>
                                     Live Demo
                                 </a>
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fab fa-github"></i>
                                     Source Code
                                 </a>
@@ -1379,11 +1228,11 @@
                                 <span class="tag">PostgreSQL</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fas fa-external-link-alt"></i>
                                     Live Demo
                                 </a>
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fab fa-github"></i>
                                     Source Code
                                 </a>
@@ -1410,11 +1259,11 @@
                                 <span class="tag">PWA</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fas fa-external-link-alt"></i>
                                     Live Demo
                                 </a>
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fab fa-github"></i>
                                     Source Code
                                 </a>
@@ -1441,11 +1290,11 @@
                                 <span class="tag">PWA</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fas fa-external-link-alt"></i>
                                     Play Games
                                 </a>
-                                <a href="#" class="project-link" onclick="showDemoMessage(event)">
+                                <a href="#" class="project-link" onclick="return false;">
                                     <i class="fab fa-github"></i>
                                     Source Code
                                 </a>
@@ -1580,21 +1429,20 @@
                         </div>
 
                         <div class="social-links">
-                            <a href="https://github.com/Shivu5904" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <a href="https://github.com/Shivu5904" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub" onclick="window.open(this.href, '_blank'); return false;">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/shivashankar-desai-957471356" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/shivashankar-desai-957471356" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn" onclick="window.open(this.href, '_blank'); return false;">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="https://www.snapchat.com/add/shivu_5904" class="social-link" target="_blank" rel="noopener noreferrer" title="Snapchat">
+                            <a href="https://www.snapchat.com/add/shivu_5904" class="social-link" target="_blank" rel="noopener noreferrer" title="Snapchat" onclick="window.open(this.href, '_blank'); return false;">
                                 <i class="fab fa-snapchat"></i>
                             </a>
-                            <a href="https://www.instagram.com/s.h.i.v.u1123" class="social-link" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <a href="https://www.instagram.com/s.h.i.v.u1123" class="social-link" target="_blank" rel="noopener noreferrer" title="Instagram" onclick="window.open(this.href, '_blank'); return false;">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -1607,288 +1455,182 @@
     </footer>
 
     <script>
-        // Global function for project demo messages
-        function showDemoMessage(event) {
-            event.preventDefault();
-            alert('Project links will be updated with actual URLs when deployed to live servers. Currently showcasing portfolio structure.');
-        }
+        (function() {
+            'use strict';
 
-        class Portfolio {
-            constructor() {
-                this.init();
-            }
+            const Portfolio = {
+                init() {
+                    this.hideLoader();
+                    this.setupEventListeners();
+                    this.setupIntersectionObserver();
+                    this.setupScrollProgress();
+                },
 
-            init() {
-                this.hideLoader();
-                this.setupEventListeners();
-                this.setupIntersectionObserver();
-                this.animateCounters();
-                this.animateSkillBars();
-                this.setupScrollProgress();
-            }
+                hideLoader() {
+                    setTimeout(() => document.body.classList.add('loaded'), 800);
+                },
 
-            hideLoader() {
-                // Hide loader after a short delay
-                setTimeout(() => {
-                    document.body.classList.add('loaded');
-                }, 1500);
+                setupEventListeners() {
+                    const mobileToggle = document.getElementById('mobile-toggle');
+                    const navMenu = document.getElementById('nav-menu');
+                    
+                    if (mobileToggle && navMenu) {
+                        mobileToggle.addEventListener('click', () => {
+                            navMenu.classList.toggle('active');
+                            const icon = mobileToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.toggle('fa-bars');
+                                icon.classList.toggle('fa-times');
+                            }
+                        });
+                    }
 
-                // Backup - ensure loader is hidden
-                setTimeout(() => {
-                    document.body.classList.add('loaded');
-                }, 3000);
-            }
-
-            setupEventListeners() {
-                // Mobile menu toggle
-                const mobileToggle = document.getElementById('mobile-toggle');
-                const navMenu = document.getElementById('nav-menu');
-                
-                if (mobileToggle && navMenu) {
-                    mobileToggle.addEventListener('click', () => {
-                        navMenu.classList.toggle('active');
-                        const icon = mobileToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.toggle('fa-bars');
-                            icon.classList.toggle('fa-times');
-                        }
-                    });
-                }
-
-                // Navigation links
-                document.querySelectorAll('a[href^="#"]').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const target = document.querySelector(link.getAttribute('href'));
-                        if (target) {
-                            target.scrollIntoView({ behavior: 'smooth' });
-                            if (navMenu) {
-                                navMenu.classList.remove('active');
-                                const toggleIcon = mobileToggle?.querySelector('i');
-                                if (toggleIcon) {
-                                    toggleIcon.className = 'fas fa-bars';
+                    document.querySelectorAll('a[href^="#"]').forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            const href = link.getAttribute('href');
+                            if (href === '#') return;
+                            
+                            e.preventDefault();
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                                if (navMenu) {
+                                    navMenu.classList.remove('active');
+                                    const toggleIcon = mobileToggle?.querySelector('i');
+                                    if (toggleIcon) {
+                                        toggleIcon.className = 'fas fa-bars';
+                                    }
                                 }
                             }
+                        });
+                    });
+
+                    document.addEventListener('click', (e) => {
+                        if (navMenu && !navMenu.contains(e.target) && !mobileToggle?.contains(e.target)) {
+                            navMenu.classList.remove('active');
+                            const toggleIcon = mobileToggle?.querySelector('i');
+                            if (toggleIcon) toggleIcon.className = 'fas fa-bars';
                         }
                     });
-                });
+                },
 
-                // Contact form
-                const contactForm = document.getElementById('contact-form');
-                if (contactForm) {
-                    contactForm.addEventListener('submit', this.handleFormSubmit.bind(this));
-                }
+                setupScrollProgress() {
+                    let ticking = false;
 
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (navMenu && !navMenu.contains(e.target) && !mobileToggle?.contains(e.target)) {
-                        navMenu.classList.remove('active');
-                        const toggleIcon = mobileToggle?.querySelector('i');
-                        if (toggleIcon) {
-                            toggleIcon.className = 'fas fa-bars';
+                    window.addEventListener('scroll', () => {
+                        if (!ticking) {
+                            window.requestAnimationFrame(() => {
+                                this.updateScroll();
+                                ticking = false;
+                            });
+                            ticking = true;
                         }
-                    }
-                });
-            }
+                    });
+                },
 
-            setupScrollProgress() {
-                window.addEventListener('scroll', () => {
-                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                updateScroll() {
+                    const winScroll = document.documentElement.scrollTop;
                     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                     const scrolled = Math.min((winScroll / height) * 100, 100);
+                    
                     const progressBar = document.getElementById('progress');
-                    if (progressBar) {
-                        progressBar.style.width = scrolled + '%';
-                    }
+                    if (progressBar) progressBar.style.width = scrolled + '%';
 
-                    // Update navbar
                     const navbar = document.getElementById('navbar');
                     if (navbar) {
-                        if (winScroll > 100) {
-                            navbar.classList.add('scrolled');
-                        } else {
-                            navbar.classList.remove('scrolled');
-                        }
+                        navbar.classList.toggle('scrolled', winScroll > 100);
                     }
 
-                    // Update active nav links
                     this.updateActiveNavLink();
-                });
-            }
+                },
 
-            updateActiveNavLink() {
-                const sections = document.querySelectorAll('section[id]');
-                const navLinks = document.querySelectorAll('.nav-link');
+                updateActiveNavLink() {
+                    const sections = document.querySelectorAll('section[id]');
+                    const navLinks = document.querySelectorAll('.nav-link');
 
-                let currentSection = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.scrollY >= (sectionTop - 200)) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${currentSection}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            setupIntersectionObserver() {
-                const options = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
+                    let currentSection = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        if (window.scrollY >= (sectionTop - 200)) {
+                            currentSection = section.getAttribute('id');
                         }
                     });
-                }, options);
 
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    observer.observe(el);
-                });
-            }
-
-            animateCounters() {
-                const counters = document.querySelectorAll('.stat-number[data-target]');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const target = parseFloat(entry.target.dataset.target);
-                            this.animateNumber(entry.target, target);
-                            observer.unobserve(entry.target);
-                        }
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
                     });
-                });
+                },
 
-                counters.forEach(counter => observer.observe(counter));
-            }
+                setupIntersectionObserver() {
+                    const options = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
 
-            animateNumber(element, target) {
-                if (!element) return;
-                let current = 0;
-                const increment = target / 60;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    element.textContent = current % 1 === 0 ? Math.floor(current) : current.toFixed(1);
-                }, 16);
-            }
-
-            animateSkillBars() {
-                const skillBars = document.querySelectorAll('.skill-fill[data-width]');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const width = entry.target.dataset.width;
-                            if (width) {
-                                setTimeout(() => {
-                                    entry.target.style.width = width + '%';
-                                }, 200);
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                
+                                if (entry.target.classList.contains('stats')) {
+                                    this.animateCounter(entry.target.querySelector('.stat-number'));
+                                }
+                                
+                                if (entry.target.classList.contains('skills-category')) {
+                                    this.animateSkillBars(entry.target);
+                                }
+                                
+                                observer.unobserve(entry.target);
                             }
-                            observer.unobserve(entry.target);
+                        });
+                    }, options);
+
+                    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+                },
+
+                animateCounter(element) {
+                    if (!element || !element.dataset.target) return;
+                    
+                    const target = parseFloat(element.dataset.target);
+                    let current = 0;
+                    const increment = target / 60;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
                         }
+                        element.textContent = current % 1 === 0 ? Math.floor(current) : current.toFixed(1);
+                    }, 16);
+                },
+
+                animateSkillBars(container) {
+                    const skillBars = container.querySelectorAll('.skill-fill[data-width]');
+                    skillBars.forEach(bar => {
+                        setTimeout(() => {
+                            bar.style.width = bar.dataset.width + '%';
+                        }, 200);
                     });
+                }
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => Portfolio.init());
+            } else {
+                Portfolio.init();
+            }
+
+            if (!window.IntersectionObserver) {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+                document.querySelectorAll('.skill-fill[data-width]').forEach(bar => {
+                    bar.style.width = bar.dataset.width + '%';
                 });
-
-                skillBars.forEach(bar => observer.observe(bar));
             }
 
-            handleFormSubmit(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(e.target);
-                const submitBtn = e.target.querySelector('button[type="submit"]');
-                
-                // Basic validation
-                const name = formData.get('name')?.trim() || '';
-                const email = formData.get('email')?.trim() || '';
-                const subject = formData.get('subject')?.trim() || '';
-                const message = formData.get('message')?.trim() || '';
-                
-                if (!name || !email || !subject || !message) {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-                
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-
-                // Show loading state
-                if (submitBtn) {
-                    const originalContent = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
-
-                    // Simulate form submission
-                    setTimeout(() => {
-                        alert('Thank you for your message! I\'ll get back to you soon. For immediate contact, please reach out directly at shivu.cloud07@gmail.com');
-                        e.target.reset();
-                        submitBtn.innerHTML = originalContent;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                }
-            }
-        }
-
-        // Initialize portfolio
-        document.addEventListener('DOMContentLoaded', () => {
-            try {
-                new Portfolio();
-            } catch (error) {
-                console.error('Portfolio initialization error:', error);
-                // Fallback - ensure loading screen is hidden
-                setTimeout(() => {
-                    document.body.classList.add('loaded');
-                }, 1000);
-            }
-        });
-
-        // Fallback for older browsers without IntersectionObserver
-        if (!window.IntersectionObserver) {
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.classList.add('visible');
-            });
-            
-            // Animate skill bars immediately
-            document.querySelectorAll('.skill-fill[data-width]').forEach(bar => {
-                const width = bar.dataset.width;
-                if (width) {
-                    bar.style.width = width + '%';
-                }
-            });
-        }
-
-        // Performance optimizations
-        if ('serviceWorker' in navigator && location.protocol === 'https:') {
-            window.addEventListener('load', () => {
-                console.log('Portfolio loaded successfully');
-            });
-        }
-
-        // Error handling
-        window.addEventListener('error', (e) => {
-            console.error('Runtime error:', e.error);
-            // Ensure content is visible even if JS fails
-            document.body.classList.add('loaded');
-        });
-
-        // Final safety net - ensure loading screen is always hidden
-        setTimeout(() => {
-            document.body.classList.add('loaded');
-        }, 5000);
+            window.addEventListener('error', () => document.body.classList.add('loaded'));
+            setTimeout(() => document.body.classList.add('loaded'), 3000);
+        })();
     </script>
 </body>
 </html>
